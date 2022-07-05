@@ -1,6 +1,8 @@
 :root{
     --fuenteHeading: 'PT SANS',sans-serif;
     --fuenteParrafos: 'Open Sans', sans-serif;
+    --h3Font: 'DM Mono', monospace;
+    --h4Font: 'Nunito Sans', sans-serif;
 
     --primario: #784D3C;
     --blanco: #ffffff;
@@ -15,13 +17,12 @@ html{
 }
 *, *:before, *:after {
     box-sizing: inherit;
-}
+} 
 body{
     font-size: 1.6rem; /*Este valor es variable, podemos modificarlo para el tamaño de letra*/
     font-family: var(--fuenteParrafos);
     line-height: 2;
-
-
+    display: block;
 }
 
 /*Globales*/
@@ -30,6 +31,7 @@ body{
     max-width: 120rem;
     width: 90%;
     margin: 0 auto;
+
 }
 
 a{
@@ -80,18 +82,51 @@ img{
 
 /*Header*/
 
-.webp .header{
+.texto-header{
+    text-align: left;
+    margin-left: 5rem;
+    font-size: 7rem;
+    color: black;
+ 
+}
+.texto-header .salud{
+    display: block;
+}
+
+
+.p-header{
+    text-align: left;
+    margin-left: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 100rem;
+    color: black;
+    font-family: var(--h4Font);
+    font-weight: 400;
+}
+
+@media(max-width: 768px){
+
+    .p-header{
+        display: block;
+        margin-top: 2rem;
+    }
+}
+
+
+
+/* .webp .header{
     background-image: url(../img/banner.webp);
 }
 
 .no-webp .header{
     background-image: url(../img/banner.jpg);
-}
+} */
 
 .header{
     /*Esto se centro simplemente poniendo el div de arriba (contenedor)
     lo que hizo fue empujarlo hacía abajo, no se necesitó código en sí*/
-    height: 60rem;
+
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -109,17 +144,32 @@ img{
     }
 }
 
+
+.header-nav{
+    width: 100%;
+    max-width: auto;
+
+}
+
+
+.barra{
+    background-color: white;
+}
+
 @media(min-width: 768px){
     .barra{                /*Alineamos la barra de navegación*/
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        max-width: auto;
 
     }
 }
 
 .logo{
-    color: var(--blanco);
+    color: var(--negro);
+    margin-left: 6rem;
 }
 
 .logo__nombre{
@@ -142,7 +192,8 @@ img{
     se verán en línea para mas de 768px*/
     .navegacion{
         display: flex;
-        gap: 2rem;
+        gap: 4rem;
+        margin-right: 6rem;
     }
 }
 
@@ -166,6 +217,9 @@ img{
     border: none;
     margin-bottom: 0
 }
+
+
+
 
 .boton{/*Se modifica el enlace para que parezca un botón y haga su misma función*/
     display: block;
@@ -192,6 +246,18 @@ img{
     esto para una mejor aparaiencia)*/
     .boton{
         display: inline-block;
+    }
+}
+.btn-header{
+    display: table;
+    margin: 2rem 0 0 5rem;
+    font-family: var(--h4Font);
+}
+
+@media (max-width: 768px){
+    .btn-header{
+        width: 90%;
+        display: block;
     }
 }
 
@@ -254,7 +320,7 @@ img{
     display: block;
     text-align: center;
     font-size: 1.8rem;
-    color: var(--blanco);
+    color: var(--negro);
 }
 
 @media(min-width: 768px){ 
@@ -394,3 +460,39 @@ img{
 }
 
 
+/*Hongos*/
+.entrada-hongos{
+    background-color: #EEAA7F;
+    display: block;
+    text-align: center;
+    padding-bottom: 5rem;
+    font-size: 20rem;
+
+}
+.p-hongos{
+    max-width: 80rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.entrada-hongos p{
+    font-family: var(--h3Font);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.8rem;
+
+}
+
+.img-hongo{
+    height: 7rem;
+    margin-top: 20rem;
+}
+
+.entrada-hongos h3{
+    font-size: 4rem;
+    line-height: 5rem;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+
+}

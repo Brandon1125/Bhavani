@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola</title>
+    <title>BHAVANI</title>
     <meta name="description" content="Página web de blog de café">
 
     <!--Prefetch-->
@@ -21,6 +21,8 @@
     crossorigin="crossorigin" as="font">
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&family=Open+Sans&family=PT+Sans:wght@400;700&family=Staatliches&display=swap"
     rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter&family=Krub:wght@400;700&family=Nunito+Sans:wght@400;700&family=Open+Sans&family=PT+Sans
+    :wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 
 
 </head>
@@ -30,7 +32,7 @@
     
     <header class="header">
 
-        <div class="contenedor">
+        <div class="header-nav">
             <div class="barra">
                 <a class="logo" href="index.html">
                     <h1 class="logo__nombre no-margin centrar-texto"><span class="logo__bold">BHAVANI</span></h1>
@@ -38,16 +40,26 @@
 
                 <nav class="navegacion">
                     <a class="navegacion__enlace" href="nosotros.html">About Us</a>
-                    <a class="navegacion__enlace" href="cursos.html">Cursos</a>
-                    <a class="navegacion__enlace" href="contacto.html">Contacto</a>
+                    <a class="navegacion__enlace" href="cursos.html">Microdosis</a>
+                    <a class="navegacion__enlace" href="contacto.html">Tratamiento</a>
+                    <a class="navegacion__enlace" href="cursos.html">Blog</a>
+                    <a class="navegacion__enlace" href="contacto.html">Mi perfil</a>
                 </nav>
+
 
             </div>
         </div>
 
         <div class="header__texto">
-            <h2 class="no-margin">Blog de café con consejos y cursos</h2>
-            <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>
+            <h2 class="no-margin texto-header">Una <span class="revolucion">revolución</span> <span class="salud">de la salud.</span></h2>
+        
+            <p class="no-margin p-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                 Similique nobis inventore ipsa, tempore odio deleniti nihil iure aspernatur 
+                 quibusdam doloremque temporibus blanditiis voluptatum, laudantium maxime a enim? 
+                 Minima, aspernatur in!
+            </p>
+
+            <a href="/" class="btn-header boton boton--primario">Inicia tu protocolo</a>
 
         </div>
 
@@ -57,30 +69,24 @@
 
 
 
-    <div class="contenedor contenido-principal">
+    <div class="main">
 
         <main>
-            <h3>Nuestro Blog</h3>
-
 
             <article class="entrada">
 
-                <div class="entrada__imagen">
-                    
-                    <picture>
-                        <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
-                        <img loading="lazy" src="img/blog1.jpg" alt="imagen blog">
-                    </picture>
 
-                </div>
+                <div class="entrada-hongos">
 
+                    <div class="img-hongo">
 
-                <div class="entrada__contenido">
-                    <h4 class="no-mragin">Tipos de Grano de Café</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet sodales leo, ac pulvinar purus eleifend nec. Aenean congue libero felis. Praesent imperdiet tincidunt mauris at ornare. Nulla varius euismod metus nec pellentesque. Praesent facilisis erat quis risus hendrerit, vitae congue odio faucibus. Suspendisse potenti. Suspendisse augue erat, fringilla non nunc eu, tristique vulputate urna. Aliquam pharetra nunc a metus efficitur, sit amet ultricies massa porta. Sed molestie luctus eros eget vestibulum. Ut rhoncus, orci eu posuere pharetra, sapien dolor.
-                    </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer entrada</a>
+                    </div>
+                    <h3 class="no-mragin">¿Para quién es el tratamiento <span>de Microdosis de hongos</span></h3>
+                    <p>La Microdosis es para todos!</p>
+                    <p class="p-hongos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquam sint aspernatur
+                     inventore dicta corporis quod, enim quos vel numquam sed aperiam animi soluta nulla ipsam 
+                     necessitatibus molestiae nostrum ducimus.!</p>
+
                 </div>
 
             </article>
@@ -131,50 +137,6 @@
 
         </main>
 
-
-
-        <aside class="sidebar">
-            <h3>Nuestros Cursos y Talleres</h3>
-
-            <ul class="cursos no-padding">
-
-                <li class="widget-curso">
-                    <h4 class="no-margin">Técnicas de Extracción de Café</h4>
-
-                    <p class="widget-curso__label">Precio:
-                        <span class="widget-curso__info">Gratis</span>
-                    </p>
-
-                    <p class="widget-curso__label">Cupo:
-                        <span class="widget-curso__info">20</span>
-                    </p>
-
-                    <a href="entrada.html" class="boton boton--secundario">mas información</a>
-
-                </li>
-
-
-
-                <li class="widget-curso">
-                    <h4 class="no-margin">4 Recetas de Café para Principiantes</h4>
-
-                    <p class="widget-curso__label">Precio:
-                        <span class="widget-curso__info">Gratis</span>
-                    </p>
-
-                    <p class="widget-curso__label">Cupo:
-                        <span class="widget-curso__info">20</span>
-                    </p>
-
-                    <a href="entrada.html" class="boton boton--secundario">mas información</a>
-
-                </li>
-
-
-            </ul>
-
-
-        </aside>
 
     </div>
 
