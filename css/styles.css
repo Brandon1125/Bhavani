@@ -1,0 +1,396 @@
+:root{
+    --fuenteHeading: 'PT SANS',sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #784D3C;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --gris: #e1e1e1;
+}
+
+html{
+    font-size: 62.5%; /*Con este html y body 10px = 1rem   */
+    box-sizing: border-box;
+
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-size: 1.6rem; /*Este valor es variable, podemos modificarlo para el tamaño de letra*/
+    font-family: var(--fuenteParrafos);
+    line-height: 2;
+
+
+}
+
+/*Globales*/
+
+.contenedor{ /*Hacemos responsivo a los contenedores*/
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*Utilidades*/
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center; /*Centramos texto si los px son menores de 768*/
+            /*Va de la mano con la línea 95, donde al ser 768px, este
+            centrar-texto, queda inservible en ese caso*/
+}
+
+
+/*Header*/
+
+.webp .header{
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header{
+    background-image: url(../img/banner.jpg);
+}
+
+.header{
+    /*Esto se centro simplemente poniendo el div de arriba (contenedor)
+    lo que hizo fue empujarlo hacía abajo, no se necesitó código en sí*/
+    height: 60rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+
+@media(min-width: 768px){
+    .header__texto{
+        margin-top: 15rem;
+    }
+}
+
+@media(min-width: 768px){
+    .barra{                /*Alineamos la barra de navegación*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+}
+
+.logo{
+    color: var(--blanco);
+}
+
+.logo__nombre{
+    font-weight: normal;/*o 400*/
+}
+
+.logo__bold{
+    font-weight: bold;/* o 700*/
+}
+
+.navegacion__enlace{/*Validamos los enlaces en dispositivos móviles (Los 3 enlaces se
+    verán en columnas o entras palabras, hacia abajo)*/
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+@media(min-width: 768px){ /*Los 3 enlaces del heading (parte superior de la página)
+    se verán en línea para mas de 768px*/
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+@media(min-width: 768px){ /*Se hace responsiva la sección de las imagenes y la barra lateral
+    esto se mostrará si los píxeles de la página son mayores a 768, si no, se mostrará en 
+    columnas (en fila hacia abajo)*/
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+    }
+}
+
+.entrada{ /*Se crea la línea de debajo de los botónes, para separar las secciones de forma visual*/
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{/*A la última entrada se le aplica esto (último article en html)
+    quita la última línea creada en .entrada, para que se vea mejor*/
+    border: none;
+    margin-bottom: 0
+}
+
+.boton{/*Se modifica el enlace para que parezca un botón y haga su misma función*/
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+}
+
+.boton--primario{ /*Se coloca este color de fondo a los botones primarios*/
+    background-color: var(--negro);
+}
+.boton--secundario{
+    background-color: var(--primario);
+}
+
+@media(min-width: 768px){/*Para que el botón no tome todo el ancho despues de
+    768px (se hace mas chico y además, no elimina sus width, margin, height etc,
+    esto para una mejor aparaiencia)*/
+    .boton{
+        display: inline-block;
+    }
+}
+
+.cursos{/*Quita el circulo o viñeta a la lista (el 1er elemento de la lista se conforma desde
+    Tecticas de Extracción, hasta el botón de mas información del sidebar)*/
+    list-style: none;
+}
+
+.widget-curso{ /*Se crea la línea de debajo de los cursos,
+    para separar las secciones de forma visual*/
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.widget-curso:last-of-type{ /*Quita la última línea de debajo de los cursos*/
+    border: none;
+    margin-bottom: none;
+}
+.widget-curso__label{ /*Modifica el tecto Precio: Gratis y Cupo: 20*/
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.widget-curso__info{ /*Modifica el texto Gratis y 20, para que se vea diferente
+    al Precio y Cupo*/
+    font-weight: normal;
+}
+
+.widget-curso__label,/*Hace mas grande el texto de Precio:Gratis y Cupo:20*/
+.widget-curso__info{
+    font-size: 2rem;
+}
+
+
+
+
+/*Footer*/
+
+.footer{ /*Hace que el footer (la barra de abajo, sea completamente negra)
+    y la hace mas grande hacia arriba y abajo*/
+    background-color: var(--negro);
+    padding: 4rem;
+    margin-top: 4rem;
+}
+
+.logo__nombre-footer{ /*Se hacen las letras de BlogDeCafé del footer blancas
+    y se les coloca un estilo de 400 o normal o mas delgado, en DeCafé también
+    entra la clase .logo__bold, que lo hace mas grande (linea 119)*/
+    color: var(--blanco);
+    font-weight: normal;
+      
+}
+
+.navegacion-footer{/*Cuando BlogDeCafé y los enlaces están en columnas (menos de
+    768px), los enlaces se separan 2rem de BlogDeCafé*/
+    margin-top: 2rem;
+}
+
+.navegacion__enlace{/*Validamos los enlaces en dispositivos móviles (Los 3 enlaces se
+    verán en columnas o entras palabras, hacia abajo)*/
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+@media(min-width: 768px){ 
+    .footer-elementos{/*Se colocan en línea los 2 elementos, el de BlogDeCafé
+        y los enlaces y se separan*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navegacion-footer{/*Ahora los enlaces se separan pero solamente a lo ancho
+        entre sí y se convierten en filas porque antes estaban en columnas (en
+        .navegacon__enlace línea 240)*/
+        display: flex;
+        gap: 2rem;
+        margin-top: 0;
+    }
+}
+
+
+/*Nosotros.html*/
+
+@media(min-width: 768px){ /*Con esto hacemos responsiva la página nosotros.html
+    esto se ve un poco mal, ya que la imagen se ve muy alargada, pero lo decidí
+    dejar, ya que con esto se logró quitar el espacio de abajo de la imagen, si 
+    queremos modificar esto, solamente hacemos otro media de 1140px y colocamos
+    el código de aqui en el otro*/
+    .sobre-nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem
+        
+    }
+
+    .sobre-nosotros__imagen{
+        display: flex;
+    }
+}
+
+
+
+/*cursos.html*/
+
+.curso{ /*Colocamos en línea las 2 secciones (la imagen y el texto de la derecha)
+    y los separamos 2 gap*/
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    /*Creamos la barra de separación que es un borde gris de cada curso*/
+    border-bottom: .5rem solid var(--gris);
+    margin-bottom: 3rem;
+}
+
+.curso:last-of-type{ /*Le quitamos el borde al último elemento, para que
+    no esté un borde sin sentido al final de la página*/
+    border: none;
+}
+
+
+@media(max-width: 768px){/*Cuando la pagina es menor a 768px pasa esto*/
+
+    .curso{ /*Los colocamos en columnas*/ 
+        display: block;       
+    }
+
+    .curso__imagen{/*Separamos 2rem las imágenes del texto*/
+        margin-bottom: 2rem;
+    }
+
+    .curso__informacion{ /*Centramos el texto*/
+        text-align: center;
+    }
+}
+
+
+
+/*Entrada.html*/
+/*Se copío nosotro.html y lo único que se hizo fue eliminar la clase
+"sobre-nosotros y reemplazarla por entrada"*/
+
+
+
+/*Contacto.html*/
+
+.contacto-bg{/*Colocamos la imagen de fondo*/
+    background-image: url(../img/contacto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40rem;
+}
+
+.formulario{/*Modificamos el formulario para que esté en el centro
+    de la imagen (lo centramos con el width, ya que toma el 95% del
+    90% que se declaró en el contenedor)*/
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo{/*Le añadimos la propiedad flex a los label y textbox*/
+    display: flex;
+
+    margin-bottom: 2rem;/*Damos espacio entre ellos*/
+}
+
+.campo__label{
+    /*El primero valor es el crecimiento, el segundo el decremento y el
+    3ro es el valor base, esto solo se le aplica al label, no a la caja
+    de texto*/
+    flex: 0 0 9rem;
+}
+
+.campo__field{
+    /*Como le estamos diciendo al label que no crezca ni decrezca (en la
+    línea 354 con flex,) Con el flex:1; le estamos diciendo a las cajas
+    de texto que crezcan y van a tomar todo el espacio que se dejaron
+    los label, es por eso que se estiran todo lo posible*/
+    flex: 1;
+
+    border: 1px solid var(--gris);/*Le damos color al borde de las 
+    cajas de texto*/
+}
+
+.campo__field--textarea{
+    height: 20rem;
+}
+
+.boton--enviar{/*Le quitamos el borde al botón enviar*/
+    border: none;
+}
+
+.boton--enviar:hover{/*Le agregamos la manita al cursor cuando se 
+    sitúe encima de el botón*/
+    cursor: pointer;
+}
+
+
