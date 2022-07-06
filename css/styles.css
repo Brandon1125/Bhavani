@@ -69,10 +69,6 @@ img{
     margin: 0;
 }
 
-.no-padding{
-    padding: 0;
-}
-
 .centrar-texto{
     text-align: center; /*Centramos texto si los px son menores de 768*/
             /*Va de la mano con la línea 95, donde al ser 768px, este
@@ -113,15 +109,6 @@ img{
     }
 }
 
-
-
-/* .webp .header{
-    background-image: url(../img/banner.webp);
-}
-
-.no-webp .header{
-    background-image: url(../img/banner.jpg);
-} */
 
 .header{
     /*Esto se centro simplemente poniendo el div de arriba (contenedor)
@@ -252,6 +239,9 @@ img{
     display: table;
     margin: 2rem 0 0 5rem;
     font-family: var(--h4Font);
+    font-weight: 700;
+    background-color: #D6EFA4;
+    color: #000000;
 }
 
 @media (max-width: 768px){
@@ -261,34 +251,13 @@ img{
     }
 }
 
-.cursos{/*Quita el circulo o viñeta a la lista (el 1er elemento de la lista se conforma desde
-    Tecticas de Extracción, hasta el botón de mas información del sidebar)*/
-    list-style: none;
-}
 
-.widget-curso{ /*Se crea la línea de debajo de los cursos,
+.widget{ /*Se crea la línea de debajo de los cursos,
     para separar las secciones de forma visual*/
-    border-bottom: 1px solid var(--gris);
+    border-bottom: 2px solid black;
     margin-bottom: 2rem;
 }
-.widget-curso:last-of-type{ /*Quita la última línea de debajo de los cursos*/
-    border: none;
-    margin-bottom: none;
-}
-.widget-curso__label{ /*Modifica el tecto Precio: Gratis y Cupo: 20*/
-    font-family: var(--fuenteHeading);
-    font-weight: bold;
-}
 
-.widget-curso__info{ /*Modifica el texto Gratis y 20, para que se vea diferente
-    al Precio y Cupo*/
-    font-weight: normal;
-}
-
-.widget-curso__label,/*Hace mas grande el texto de Precio:Gratis y Cupo:20*/
-.widget-curso__info{
-    font-size: 2rem;
-}
 
 
 
@@ -302,16 +271,13 @@ img{
     margin-top: 4rem;
 }
 
-.logo__nombre-footer{ /*Se hacen las letras de BlogDeCafé del footer blancas
-    y se les coloca un estilo de 400 o normal o mas delgado, en DeCafé también
-    entra la clase .logo__bold, que lo hace mas grande (linea 119)*/
+.logo__nombre-footer{ 
     color: var(--blanco);
     font-weight: normal;
       
 }
 
-.navegacion-footer{/*Cuando BlogDeCafé y los enlaces están en columnas (menos de
-    768px), los enlaces se separan 2rem de BlogDeCafé*/
+.navegacion-footer{
     margin-top: 2rem;
 }
 
@@ -324,8 +290,7 @@ img{
 }
 
 @media(min-width: 768px){ 
-    .footer-elementos{/*Se colocan en línea los 2 elementos, el de BlogDeCafé
-        y los enlaces y se separan*/
+    .footer-elementos{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -341,125 +306,6 @@ img{
 }
 
 
-/*Nosotros.html*/
-
-@media(min-width: 768px){ /*Con esto hacemos responsiva la página nosotros.html
-    esto se ve un poco mal, ya que la imagen se ve muy alargada, pero lo decidí
-    dejar, ya que con esto se logró quitar el espacio de abajo de la imagen, si 
-    queremos modificar esto, solamente hacemos otro media de 1140px y colocamos
-    el código de aqui en el otro*/
-    .sobre-nosotros{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem
-        
-    }
-
-    .sobre-nosotros__imagen{
-        display: flex;
-    }
-}
-
-
-
-/*cursos.html*/
-
-.curso{ /*Colocamos en línea las 2 secciones (la imagen y el texto de la derecha)
-    y los separamos 2 gap*/
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-
-    /*Creamos la barra de separación que es un borde gris de cada curso*/
-    border-bottom: .5rem solid var(--gris);
-    margin-bottom: 3rem;
-}
-
-.curso:last-of-type{ /*Le quitamos el borde al último elemento, para que
-    no esté un borde sin sentido al final de la página*/
-    border: none;
-}
-
-
-@media(max-width: 768px){/*Cuando la pagina es menor a 768px pasa esto*/
-
-    .curso{ /*Los colocamos en columnas*/ 
-        display: block;       
-    }
-
-    .curso__imagen{/*Separamos 2rem las imágenes del texto*/
-        margin-bottom: 2rem;
-    }
-
-    .curso__informacion{ /*Centramos el texto*/
-        text-align: center;
-    }
-}
-
-
-
-/*Entrada.html*/
-/*Se copío nosotro.html y lo único que se hizo fue eliminar la clase
-"sobre-nosotros y reemplazarla por entrada"*/
-
-
-
-/*Contacto.html*/
-
-.contacto-bg{/*Colocamos la imagen de fondo*/
-    background-image: url(../img/contacto.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 40rem;
-}
-
-.formulario{/*Modificamos el formulario para que esté en el centro
-    de la imagen (lo centramos con el width, ya que toma el 95% del
-    90% que se declaró en el contenedor)*/
-    background-color: var(--blanco);
-    margin: -5rem auto 0 auto;
-    width: 95%;
-    padding: 5rem;
-}
-
-.campo{/*Le añadimos la propiedad flex a los label y textbox*/
-    display: flex;
-
-    margin-bottom: 2rem;/*Damos espacio entre ellos*/
-}
-
-.campo__label{
-    /*El primero valor es el crecimiento, el segundo el decremento y el
-    3ro es el valor base, esto solo se le aplica al label, no a la caja
-    de texto*/
-    flex: 0 0 9rem;
-}
-
-.campo__field{
-    /*Como le estamos diciendo al label que no crezca ni decrezca (en la
-    línea 354 con flex,) Con el flex:1; le estamos diciendo a las cajas
-    de texto que crezcan y van a tomar todo el espacio que se dejaron
-    los label, es por eso que se estiran todo lo posible*/
-    flex: 1;
-
-    border: 1px solid var(--gris);/*Le damos color al borde de las 
-    cajas de texto*/
-}
-
-.campo__field--textarea{
-    height: 20rem;
-}
-
-.boton--enviar{/*Le quitamos el borde al botón enviar*/
-    border: none;
-}
-
-.boton--enviar:hover{/*Le agregamos la manita al cursor cuando se 
-    sitúe encima de el botón*/
-    cursor: pointer;
-}
-
-
 /*Hongos*/
 .entrada-hongos{
     background-color: #EEAA7F;
@@ -467,6 +313,7 @@ img{
     text-align: center;
     padding-bottom: 5rem;
     font-size: 20rem;
+    text-transform: uppercase;
 
 }
 .p-hongos{
@@ -496,3 +343,208 @@ img{
     margin-right: auto;
 
 }
+
+/*Beneficios*/
+
+
+.beneficios{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+    
+}
+
+.beneficios-header, .beneficios-iconos1, .beneficios-iconos2{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5rem 0 5rem;
+
+}
+
+.beneficios-header p{
+    max-width: 35rem;
+    font-size: 1.8rem;
+}
+.beneficios-header h2{
+    max-width: 40rem;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.beneficios-iconos1, .beneficios-iconos2{
+    margin: 0 30rem 0 30rem;
+}
+
+.beneficios-iconos1 h3, .beneficios-iconos2 h3{
+    max-width: 22rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 15rem;
+}
+
+.btn-iconos{
+    max-width: 30rem;
+    margin: 0 auto 0 auto;
+    text-transform: inherit;
+    background-color: #EEAA7F;
+    color: black;
+    font-size: 2.2rem;
+
+}
+
+@media(max-width: 768px){
+    .beneficios{
+        display: block;
+    }
+
+    .beneficios-header, .beneficios-iconos1, .beneficios-iconos2{
+        margin: 0 auto 0 auto;
+        
+    }
+    .beneficios-header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .widget{
+        width: 90%;
+    }
+
+}
+
+/*Experiencia*/
+.experiencia{
+    background-color: #899FC4;
+    margin: 7rem 0 0 0;
+    padding: 4rem 0 12rem 0;
+}
+
+.experiencia h2{
+    color:#D6EFA4;
+    text-transform: uppercase;
+}
+
+.experiencia-header{
+    margin: 0 auto;
+    text-align: center;
+}
+.experiencia-header p{
+    max-width: 55rem;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0 5rem;
+    margin-top: 7rem;
+    align-items: baseline;
+}
+
+.stats .widget{
+    max-width: 30rem;
+    margin: 3rem auto;
+}
+
+.stats h2{
+    background-color: #D6EFA4;
+    color: black;
+    text-align: center;
+    font-size: 8rem;
+    max-width: 50rem;
+}
+
+.stats p{
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px){
+
+    .stats{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+}
+
+
+/*Testimoniales*/
+.testimonios{
+    background-color: rgb(248, 243, 243);
+    margin: 0;
+    padding: 5rem;
+}
+
+.testimonios h2{
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.blockquotes{
+    margin: 5rem auto 0 auto ;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 100rem;
+}
+
+.testimonio{
+    padding: 3rem;
+}
+.testimonio h3{
+    margin: 0;
+    line-height: 0;
+}
+.testimonio h4{
+    text-transform: uppercase;
+    font-size: 2.2rem;
+}
+blockquote{
+    background-color: white;
+}
+
+@media (max-width: 768px){
+    .blockquotes{
+        display: block;
+    }
+}
+
+
+/*Fórmulas*/
+.formulas{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #CEC5B4;
+    padding: 6rem;
+}
+.texto-formulas{
+    margin-left: 50rem;
+    max-width: 90rem;
+}
+
+.texto-formulas h2{
+    font-size: 10.5rem;
+    margin: 0 0 3rem 0;
+    font-weight: 400;
+    
+}
+
+.texto-formulas p{
+    font-size: 2rem;
+
+}
+
+.btn-formulas{
+    margin-top: 3rem;
+    background-color: #D6EFA4;
+    color: black;
+    text-transform: inherit;
+    padding: 1rem 6rem;
+}
+
